@@ -1,11 +1,17 @@
 using Net8BlazorAuto.Server.Components;
+using Net8BlazorAuto.Services;
+using Net8BlazorAuto.Shared.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IWeatherService, WeatherService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddServerComponents()
     .AddWebAssemblyComponents();
+
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -28,5 +34,7 @@ app.UseStaticFiles();
 app.MapRazorComponents<App>()
     .AddServerRenderMode()
     .AddWebAssemblyRenderMode();
+
+app.MapControllers();
 
 app.Run();

@@ -1,4 +1,4 @@
-namespace Net8BlazorAuto.Server.Models;
+namespace Net8BlazorAuto.Shared;
 
 public class WeatherForecast
 {

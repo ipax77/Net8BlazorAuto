@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\Net8BlazorAuto.Client.csproj" />
+    <ProjectReference Include="..\Shared\Net8BlazorAuto.Shared.csproj" />
   </ItemGroup>
 
 
