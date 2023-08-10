@@ -21,7 +21,9 @@ public class WeatherService : IWeatherService
     {
         logger.LogInformation("getting weather from {sender} - {date}", fromServer ? "Server" : "Client", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
 
+        // Simulate retrieving the data asynchronously.
         await Task.Delay(1000);
+
         var startDate = DateOnly.FromDateTime(DateTime.Now);
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
